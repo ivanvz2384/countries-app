@@ -1,6 +1,6 @@
 const countriesReducerDefaultState = [];
 
-export default (state = countriesReducerDefaultState, action) => {
+const reducerCountries = (state = countriesReducerDefaultState, action) => {
     switch(action.type) {
         case 'SET_COUNTRIES': 
             return action.countries;
@@ -8,3 +8,5 @@ export default (state = countriesReducerDefaultState, action) => {
             return state;
     }
 }
+
+export default reducerCountries; 

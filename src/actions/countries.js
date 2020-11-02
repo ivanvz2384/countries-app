@@ -8,7 +8,7 @@ import {
 export const setCountries = (countries) => ({
     type: 'SET_COUNTRIES',
     countries
-})
+});
   
 export const startSetCountries = () => {
     return (dispatch) => {
@@ -22,8 +22,20 @@ export const startSetCountries = () => {
         })
         .then(response => response.json())
         .then( data => {
-            console.log(data);
             dispatch(setCountries(data));
         });
+    }
+}
+
+export const setCountry = (country) => ({
+    type: 'SET_COUNTRY',
+    country
+});
+
+export const startSetCountry = (alpha2Code) => {
+    return (dispatch, getState) => {
+        const countries = getState().countries;
+        const country = countries.find(c => c.alpha2Code === alpha2Code);
+        dispatch(setCountry(country));
     }
 }

@@ -1,5 +1,16 @@
+export const setTextFilter = (text = '') => ({
+    type: 'SET_TEXT_FILTER',
+    text
+})
 
-export const filterByCountryId = (id) => ({
-    type: 'FILTER_BY_COUNTRY_ID',
-    id
-});
+export const sortByCountAscending = () => ({
+    type: 'SORT_BY_COUNT_ASCENDING'
+})
+
+export const sortByCountDescending = () => ({
+    type: 'SORT_BY_COUNT_DESCENDING'
+})
+
+export const sortByCountryName = () => ({
+    type: 'SORT_BY_COUNTRY_NAME'
+})
